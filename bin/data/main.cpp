@@ -20,12 +20,12 @@ int main()
 		printf("read: %s", buf);
 		
 		// download video
-		sprintf(buf2, "python youtube.py www.youtube.com%s -f 18 -o %d.mp4", buf, i);
+		sprintf(buf2, "python youtube.py www.youtube.com%s -f 18 -o video/%d.mp4", buf, i);
 		system(buf2);
 		fgets(buf2, 10000, fp);
 		
 		// strip audio
-		sprintf(buf2, "ffmpeg -i %d.mp4 -vn -acodec pcm_s16le -ar 44100 -ac 2 %d.wav", i, i);
+		sprintf(buf2, "ffmpeg -i video/%d.mp4 -vn -acodec pcm_s16le -ar 44100 -ac 2 audio/%d.wav", i, i);
 		system(buf2);
 		
 		// strip video
