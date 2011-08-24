@@ -197,48 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>897824451405466E00C529B2</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>testApp.cpp</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>897824461405466E00C529B2</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>testApp.cpp</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>8978248C140552EB00C529B2</string>
-						<key>history</key>
-						<array>
-							<string>8978248A140551D300C529B2</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {871, 766}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>115 71 871 807 0 0 1440 878 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>1081</integer>
@@ -271,6 +230,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -340,7 +301,7 @@
 							<real>241</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>254 156 1081 680 0 0 1440 878 </string>
+						<string>318 133 1081 680 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -377,7 +338,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {818, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>254 156 1081 680 0 0 1440 878 </string>
+								<string>318 133 1081 680 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -456,7 +417,7 @@
 										<key>Frame</key>
 										<string>{{10, 27}, {818, 607}}</string>
 										<key>RubberWindowFrame</key>
-										<string>254 156 1081 680 0 0 1440 878 </string>
+										<string>318 133 1081 680 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -680,10 +641,9 @@
 		<string>8978244D1405466E00C529B2</string>
 		<string>8978244E1405466E00C529B2</string>
 		<string>/Users/pkmital/Coding/ofGit2/apps/pkm/videoSPAM/videoSPAM.xcodeproj</string>
-		<string>897824451405466E00C529B2</string>
 	</array>
 	<key>WindowString</key>
-	<string>254 156 1081 680 0 0 1440 878 </string>
+	<string>318 133 1081 680 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

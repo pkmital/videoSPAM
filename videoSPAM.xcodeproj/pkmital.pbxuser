@@ -812,6 +812,22 @@
 		vrLen = 1235;
 		vrLoc = 24538;
 	};
+	89782484140551A700C529B2 /* pkmEXTAudioFileReader.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {747, 707}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 457}";
+			sepNavWindowFrame = "{{42, 26}, {806, 826}}";
+		};
+	};
+	89782485140551A700C529B2 /* pkmEXTAudioFileReader.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {943, 2128}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1365}";
+			sepNavWindowFrame = "{{65, 5}, {806, 826}}";
+		};
+	};
 	8978248A140551D300C529B2 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */;
@@ -1138,10 +1154,10 @@
 	};
 	E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {812, 1596}}";
-			sepNavSelRange = "{87, 0}";
-			sepNavVisRange = "{0, 1031}";
-			sepNavWindowFrame = "{{285, 24}, {871, 854}}";
+			sepNavIntBoundsRect = "{{0, 0}, {812, 1834}}";
+			sepNavSelRange = "{460, 0}";
+			sepNavVisRange = "{86, 1069}";
+			sepNavWindowFrame = "{{101, 24}, {871, 854}}";
 		};
 	};
 	E4B69E1F0A3A1BDC003C02F2 /* testApp.h */ = {
