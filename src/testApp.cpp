@@ -2,7 +2,8 @@
 
 void testApp::closeApp()
 {
-	audioFileReader.close();
+	// deallocate
+	free(current_frame);
 	
 	OF_EXIT_APP(0);
 }
@@ -45,6 +46,7 @@ void testApp::update(){
 	{
 		audioFileReader.read(current_frame, (frame)*frameSize, frameSize);
 		// segment
+		
 		
 		
 		frame++;

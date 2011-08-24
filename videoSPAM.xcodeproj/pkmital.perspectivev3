@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>8978248B140551D300C529B2</string>
+						<string>8978248C140552EB00C529B2</string>
 						<key>history</key>
 						<array>
 							<string>8978248A140551D300C529B2</string>
@@ -679,8 +679,8 @@
 	<array>
 		<string>8978244D1405466E00C529B2</string>
 		<string>8978244E1405466E00C529B2</string>
-		<string>897824451405466E00C529B2</string>
 		<string>/Users/pkmital/Coding/ofGit2/apps/pkm/videoSPAM/videoSPAM.xcodeproj</string>
+		<string>897824451405466E00C529B2</string>
 	</array>
 	<key>WindowString</key>
 	<string>254 156 1081 680 0 0 1440 878 </string>
