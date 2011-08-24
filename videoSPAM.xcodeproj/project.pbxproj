@@ -10,33 +10,13 @@
 		894679FB13FC0DFF008791BC /* cairo-script-interpreter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894679F213FC0DFF008791BC /* cairo-script-interpreter.a */; };
 		894679FC13FC0DFF008791BC /* cairo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894679F313FC0DFF008791BC /* cairo.a */; };
 		894679FD13FC0DFF008791BC /* pixman-1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894679F413FC0DFF008791BC /* pixman-1.a */; };
-		894679FE13FC0DFF008791BC /* cairo-static.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 894679F613FC0DFF008791BC /* cairo-static.lib */; };
-		894679FF13FC0DFF008791BC /* pixman-1.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 894679F713FC0DFF008791BC /* pixman-1.lib */; };
-		89467A0013FC0DFF008791BC /* libcairo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894679F913FC0DFF008791BC /* libcairo.a */; };
-		89467A0113FC0DFF008791BC /* libpixman-1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894679FA13FC0DFF008791BC /* libpixman-1.a */; };
 		89467A1F13FC0E9F008791BC /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89467A1E13FC0E9F008791BC /* CoreVideo.framework */; };
 		89467AEE13FC0F66008791BC /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89467AED13FC0F66008791BC /* ApplicationServices.framework */; };
 		89467C9813FC0F88008791BC /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89467C9713FC0F88008791BC /* QuickTime.framework */; };
 		89782486140551A700C529B2 /* pkmEXTAudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89782485140551A700C529B2 /* pkmEXTAudioFileReader.mm */; };
-		899D5CB913FC055000C66711 /* ofxFileDialogOSX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 899D5CB713FC055000C66711 /* ofxFileDialogOSX.cpp */; };
 		899D5CC013FC069900C66711 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899D5CBF13FC069900C66711 /* Accelerate.framework */; };
 		899D5E0B13FC073100C66711 /* glew.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 899D5DE413FC073100C66711 /* glew.a */; };
-		899D5E0C13FC073100C66711 /* glew32s.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 899D5DE613FC073100C66711 /* glew32s.lib */; };
-		899D5E0D13FC073100C66711 /* libtess2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 899D5DED13FC073100C66711 /* libtess2.a */; };
-		899D5E0E13FC073100C66711 /* libtess2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 899D5DEF13FC073100C66711 /* libtess2.a */; };
-		899D5E0F13FC073100C66711 /* tess2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 899D5DF113FC073100C66711 /* tess2.a */; };
-		899D5E1013FC073100C66711 /* libtess2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 899D5DF313FC073100C66711 /* libtess2.a */; };
-		899D5E1113FC073100C66711 /* libtess2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 899D5DF513FC073100C66711 /* libtess2.a */; };
 		899D5E1213FC073100C66711 /* tess2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 899D5DF713FC073100C66711 /* tess2.a */; };
-		899D5E1313FC073100C66711 /* tess2.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 899D5DF913FC073100C66711 /* tess2.lib */; };
-		899D5E1413FC073100C66711 /* libtess2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 899D5DFB13FC073100C66711 /* libtess2.a */; };
-		899D5E1513FC073100C66711 /* bucketalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 899D5DFD13FC073100C66711 /* bucketalloc.c */; };
-		899D5E1613FC073100C66711 /* dict.c in Sources */ = {isa = PBXBuildFile; fileRef = 899D5DFF13FC073100C66711 /* dict.c */; };
-		899D5E1713FC073100C66711 /* geom.c in Sources */ = {isa = PBXBuildFile; fileRef = 899D5E0113FC073100C66711 /* geom.c */; };
-		899D5E1813FC073100C66711 /* mesh.c in Sources */ = {isa = PBXBuildFile; fileRef = 899D5E0313FC073100C66711 /* mesh.c */; };
-		899D5E1913FC073100C66711 /* priorityq.c in Sources */ = {isa = PBXBuildFile; fileRef = 899D5E0513FC073100C66711 /* priorityq.c */; };
-		899D5E1A13FC073100C66711 /* sweep.c in Sources */ = {isa = PBXBuildFile; fileRef = 899D5E0713FC073100C66711 /* sweep.c */; };
-		899D5E1B13FC073100C66711 /* tess.c in Sources */ = {isa = PBXBuildFile; fileRef = 899D5E0913FC073100C66711 /* tess.c */; };
 		E44667010F5B3E04005D0BF0 /* model3DS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44665D70F5B3E03005D0BF0 /* model3DS.cpp */; };
 		E44667020F5B3E04005D0BF0 /* texture3DS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44665D90F5B3E03005D0BF0 /* texture3DS.cpp */; };
 		E44667030F5B3E04005D0BF0 /* ofx3dModelLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44665DD0F5B3E03005D0BF0 /* ofx3dModelLoader.cpp */; };
@@ -65,13 +45,12 @@
 		E49DA7E310CD40AD0006B5A8 /* freeimage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49DA7E210CD40AD0006B5A8 /* freeimage.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */; };
-		E4C2422B10CC554B004149E2 /* openFrameworks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2421E10CC549C004149E2 /* openFrameworks.a */; };
+		E4C2422B10CC554B004149E2 /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2421E10CC549C004149E2 /* openFrameworksDebug.a */; };
 		E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424410CC5A17004149E2 /* AppKit.framework */; };
 		E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424510CC5A17004149E2 /* Cocoa.framework */; };
 		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
 		E4C2426610CC5A78004149E2 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2425F10CC5A78004149E2 /* GLUT.framework */; };
 		E4C2426B10CC5AA6004149E2 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E4C2425F10CC5A78004149E2 /* GLUT.framework */; };
-		E4C2427F10CC5B66004149E2 /* CppUnit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2427A10CC5B66004149E2 /* CppUnit.a */; };
 		E4C2428010CC5B66004149E2 /* PocoFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2427B10CC5B66004149E2 /* PocoFoundation.a */; };
 		E4C2428110CC5B66004149E2 /* PocoNet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2427C10CC5B66004149E2 /* PocoNet.a */; };
 		E4C2428210CC5B66004149E2 /* PocoUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2427D10CC5B66004149E2 /* PocoUtil.a */; };
@@ -143,10 +122,6 @@
 		894679F213FC0DFF008791BC /* cairo-script-interpreter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "cairo-script-interpreter.a"; sourceTree = "<group>"; };
 		894679F313FC0DFF008791BC /* cairo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = cairo.a; sourceTree = "<group>"; };
 		894679F413FC0DFF008791BC /* pixman-1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "pixman-1.a"; sourceTree = "<group>"; };
-		894679F613FC0DFF008791BC /* cairo-static.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "cairo-static.lib"; sourceTree = "<group>"; };
-		894679F713FC0DFF008791BC /* pixman-1.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "pixman-1.lib"; sourceTree = "<group>"; };
-		894679F913FC0DFF008791BC /* libcairo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcairo.a; sourceTree = "<group>"; };
-		894679FA13FC0DFF008791BC /* libpixman-1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpixman-1.a"; sourceTree = "<group>"; };
 		89467A0513FC0E33008791BC /* ofxMatrix3x3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMatrix3x3.h; sourceTree = "<group>"; };
 		89467A0613FC0E33008791BC /* ofxMatrix4x4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMatrix4x4.h; sourceTree = "<group>"; };
 		89467A0713FC0E33008791BC /* ofxPoint2f.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxPoint2f.h; sourceTree = "<group>"; };
@@ -162,37 +137,13 @@
 		89467C9713FC0F88008791BC /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = System/Library/Frameworks/QuickTime.framework; sourceTree = SDKROOT; };
 		89782484140551A700C529B2 /* pkmEXTAudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pkmEXTAudioFileReader.h; sourceTree = "<group>"; };
 		89782485140551A700C529B2 /* pkmEXTAudioFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = pkmEXTAudioFileReader.mm; sourceTree = "<group>"; };
-		899D5CB713FC055000C66711 /* ofxFileDialogOSX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxFileDialogOSX.cpp; sourceTree = "<group>"; };
-		899D5CB813FC055000C66711 /* ofxFileDialogOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxFileDialogOSX.h; sourceTree = "<group>"; };
 		899D5CBF13FC069900C66711 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = /System/Library/Frameworks/Accelerate.framework; sourceTree = "<absolute>"; };
 		899D5DDF13FC073100C66711 /* glew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glew.h; sourceTree = "<group>"; };
 		899D5DE013FC073100C66711 /* glxew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glxew.h; sourceTree = "<group>"; };
 		899D5DE113FC073100C66711 /* wglew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wglew.h; sourceTree = "<group>"; };
 		899D5DE413FC073100C66711 /* glew.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = glew.a; sourceTree = "<group>"; };
-		899D5DE613FC073100C66711 /* glew32s.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = glew32s.lib; sourceTree = "<group>"; };
 		899D5DE913FC073100C66711 /* tesselator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tesselator.h; sourceTree = "<group>"; };
-		899D5DED13FC073100C66711 /* libtess2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtess2.a; sourceTree = "<group>"; };
-		899D5DEF13FC073100C66711 /* libtess2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtess2.a; sourceTree = "<group>"; };
-		899D5DF113FC073100C66711 /* tess2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = tess2.a; sourceTree = "<group>"; };
-		899D5DF313FC073100C66711 /* libtess2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtess2.a; sourceTree = "<group>"; };
-		899D5DF513FC073100C66711 /* libtess2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtess2.a; sourceTree = "<group>"; };
 		899D5DF713FC073100C66711 /* tess2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = tess2.a; sourceTree = "<group>"; };
-		899D5DF913FC073100C66711 /* tess2.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = tess2.lib; sourceTree = "<group>"; };
-		899D5DFB13FC073100C66711 /* libtess2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtess2.a; sourceTree = "<group>"; };
-		899D5DFD13FC073100C66711 /* bucketalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bucketalloc.c; sourceTree = "<group>"; };
-		899D5DFE13FC073100C66711 /* bucketalloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bucketalloc.h; sourceTree = "<group>"; };
-		899D5DFF13FC073100C66711 /* dict.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dict.c; sourceTree = "<group>"; };
-		899D5E0013FC073100C66711 /* dict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dict.h; sourceTree = "<group>"; };
-		899D5E0113FC073100C66711 /* geom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = geom.c; sourceTree = "<group>"; };
-		899D5E0213FC073100C66711 /* geom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geom.h; sourceTree = "<group>"; };
-		899D5E0313FC073100C66711 /* mesh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mesh.c; sourceTree = "<group>"; };
-		899D5E0413FC073100C66711 /* mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mesh.h; sourceTree = "<group>"; };
-		899D5E0513FC073100C66711 /* priorityq.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = priorityq.c; sourceTree = "<group>"; };
-		899D5E0613FC073100C66711 /* priorityq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = priorityq.h; sourceTree = "<group>"; };
-		899D5E0713FC073100C66711 /* sweep.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sweep.c; sourceTree = "<group>"; };
-		899D5E0813FC073100C66711 /* sweep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sweep.h; sourceTree = "<group>"; };
-		899D5E0913FC073100C66711 /* tess.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tess.c; sourceTree = "<group>"; };
-		899D5E0A13FC073100C66711 /* tess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tess.h; sourceTree = "<group>"; };
 		E44665D70F5B3E03005D0BF0 /* model3DS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = model3DS.cpp; path = ../../../addons/ofx3DModelLoader/src/3DS/model3DS.cpp; sourceTree = SOURCE_ROOT; };
 		E44665D80F5B3E03005D0BF0 /* model3DS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = model3DS.h; path = ../../../addons/ofx3DModelLoader/src/3DS/model3DS.h; sourceTree = SOURCE_ROOT; };
 		E44665D90F5B3E03005D0BF0 /* texture3DS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = texture3DS.cpp; path = ../../../addons/ofx3DModelLoader/src/3DS/texture3DS.cpp; sourceTree = SOURCE_ROOT; };
@@ -273,7 +224,6 @@
 		E4C2424510CC5A17004149E2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		E4C2424610CC5A17004149E2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		E4C2425F10CC5A78004149E2 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = SOURCE_ROOT; };
-		E4C2427A10CC5B66004149E2 /* CppUnit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = CppUnit.a; path = ../../../libs/poco/lib/osx/CppUnit.a; sourceTree = SOURCE_ROOT; };
 		E4C2427B10CC5B66004149E2 /* PocoFoundation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoFoundation.a; path = ../../../libs/poco/lib/osx/PocoFoundation.a; sourceTree = SOURCE_ROOT; };
 		E4C2427C10CC5B66004149E2 /* PocoNet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoNet.a; path = ../../../libs/poco/lib/osx/PocoNet.a; sourceTree = SOURCE_ROOT; };
 		E4C2427D10CC5B66004149E2 /* PocoUtil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoUtil.a; path = ../../../libs/poco/lib/osx/PocoUtil.a; sourceTree = SOURCE_ROOT; };
@@ -288,7 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C2422B10CC554B004149E2 /* openFrameworks.a in Frameworks */,
+				E4C2422B10CC554B004149E2 /* openFrameworksDebug.a in Frameworks */,
 				E45BE2E40E8CC69C009D7055 /* rtAudio.a in Frameworks */,
 				E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */,
 				E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */,
@@ -301,7 +251,6 @@
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
 				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
 				E4C2426610CC5A78004149E2 /* GLUT.framework in Frameworks */,
-				E4C2427F10CC5B66004149E2 /* CppUnit.a in Frameworks */,
 				E4C2428010CC5B66004149E2 /* PocoFoundation.a in Frameworks */,
 				E4C2428110CC5B66004149E2 /* PocoNet.a in Frameworks */,
 				E4C2428210CC5B66004149E2 /* PocoUtil.a in Frameworks */,
@@ -312,22 +261,10 @@
 				E49DA7E310CD40AD0006B5A8 /* freeimage.a in Frameworks */,
 				899D5CC013FC069900C66711 /* Accelerate.framework in Frameworks */,
 				899D5E0B13FC073100C66711 /* glew.a in Frameworks */,
-				899D5E0C13FC073100C66711 /* glew32s.lib in Frameworks */,
-				899D5E0D13FC073100C66711 /* libtess2.a in Frameworks */,
-				899D5E0E13FC073100C66711 /* libtess2.a in Frameworks */,
-				899D5E0F13FC073100C66711 /* tess2.a in Frameworks */,
-				899D5E1013FC073100C66711 /* libtess2.a in Frameworks */,
-				899D5E1113FC073100C66711 /* libtess2.a in Frameworks */,
 				899D5E1213FC073100C66711 /* tess2.a in Frameworks */,
-				899D5E1313FC073100C66711 /* tess2.lib in Frameworks */,
-				899D5E1413FC073100C66711 /* libtess2.a in Frameworks */,
 				894679FB13FC0DFF008791BC /* cairo-script-interpreter.a in Frameworks */,
 				894679FC13FC0DFF008791BC /* cairo.a in Frameworks */,
 				894679FD13FC0DFF008791BC /* pixman-1.a in Frameworks */,
-				894679FE13FC0DFF008791BC /* cairo-static.lib in Frameworks */,
-				894679FF13FC0DFF008791BC /* pixman-1.lib in Frameworks */,
-				89467A0013FC0DFF008791BC /* libcairo.a in Frameworks */,
-				89467A0113FC0DFF008791BC /* libpixman-1.a in Frameworks */,
 				89467A1F13FC0E9F008791BC /* CoreVideo.framework in Frameworks */,
 				89467AEE13FC0F66008791BC /* ApplicationServices.framework in Frameworks */,
 				89467C9813FC0F88008791BC /* QuickTime.framework in Frameworks */,
@@ -399,8 +336,6 @@
 			isa = PBXGroup;
 			children = (
 				894679F113FC0DFF008791BC /* osx */,
-				894679F513FC0DFF008791BC /* vs2010 */,
-				894679F813FC0DFF008791BC /* win_cb */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -413,24 +348,6 @@
 				894679F413FC0DFF008791BC /* pixman-1.a */,
 			);
 			path = osx;
-			sourceTree = "<group>";
-		};
-		894679F513FC0DFF008791BC /* vs2010 */ = {
-			isa = PBXGroup;
-			children = (
-				894679F613FC0DFF008791BC /* cairo-static.lib */,
-				894679F713FC0DFF008791BC /* pixman-1.lib */,
-			);
-			path = vs2010;
-			sourceTree = "<group>";
-		};
-		894679F813FC0DFF008791BC /* win_cb */ = {
-			isa = PBXGroup;
-			children = (
-				894679F913FC0DFF008791BC /* libcairo.a */,
-				894679FA13FC0DFF008791BC /* libpixman-1.a */,
-			);
-			path = win_cb;
 			sourceTree = "<group>";
 		};
 		89467A0413FC0E33008791BC /* src */ = {
@@ -448,15 +365,6 @@
 				89467A0E13FC0E33008791BC /* ofxVectorMath.h */,
 			);
 			path = src;
-			sourceTree = "<group>";
-		};
-		899D5CB613FC055000C66711 /* ofxFileDialogOSX */ = {
-			isa = PBXGroup;
-			children = (
-				899D5CB713FC055000C66711 /* ofxFileDialogOSX.cpp */,
-				899D5CB813FC055000C66711 /* ofxFileDialogOSX.h */,
-			);
-			path = ofxFileDialogOSX;
 			sourceTree = "<group>";
 		};
 		899D5DDC13FC073100C66711 /* glew */ = {
@@ -491,7 +399,6 @@
 			isa = PBXGroup;
 			children = (
 				899D5DE313FC073100C66711 /* osx */,
-				899D5DE513FC073100C66711 /* win_cb */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -504,20 +411,11 @@
 			path = osx;
 			sourceTree = "<group>";
 		};
-		899D5DE513FC073100C66711 /* win_cb */ = {
-			isa = PBXGroup;
-			children = (
-				899D5DE613FC073100C66711 /* glew32s.lib */,
-			);
-			path = win_cb;
-			sourceTree = "<group>";
-		};
 		899D5DE713FC073100C66711 /* tess2 */ = {
 			isa = PBXGroup;
 			children = (
 				899D5DE813FC073100C66711 /* include */,
 				899D5DEA13FC073100C66711 /* lib */,
-				899D5DFC13FC073100C66711 /* Sources */,
 			);
 			name = tess2;
 			path = ../../../libs/tess2;
@@ -534,64 +432,9 @@
 		899D5DEA13FC073100C66711 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				899D5DEB13FC073100C66711 /* android */,
-				899D5DF013FC073100C66711 /* iphone */,
-				899D5DF213FC073100C66711 /* linux */,
-				899D5DF413FC073100C66711 /* linux64 */,
 				899D5DF613FC073100C66711 /* osx */,
-				899D5DF813FC073100C66711 /* vs2010 */,
-				899D5DFA13FC073100C66711 /* win_cb */,
 			);
 			path = lib;
-			sourceTree = "<group>";
-		};
-		899D5DEB13FC073100C66711 /* android */ = {
-			isa = PBXGroup;
-			children = (
-				899D5DEC13FC073100C66711 /* armeabi */,
-				899D5DEE13FC073100C66711 /* armeabi-v7a */,
-			);
-			path = android;
-			sourceTree = "<group>";
-		};
-		899D5DEC13FC073100C66711 /* armeabi */ = {
-			isa = PBXGroup;
-			children = (
-				899D5DED13FC073100C66711 /* libtess2.a */,
-			);
-			path = armeabi;
-			sourceTree = "<group>";
-		};
-		899D5DEE13FC073100C66711 /* armeabi-v7a */ = {
-			isa = PBXGroup;
-			children = (
-				899D5DEF13FC073100C66711 /* libtess2.a */,
-			);
-			path = "armeabi-v7a";
-			sourceTree = "<group>";
-		};
-		899D5DF013FC073100C66711 /* iphone */ = {
-			isa = PBXGroup;
-			children = (
-				899D5DF113FC073100C66711 /* tess2.a */,
-			);
-			path = iphone;
-			sourceTree = "<group>";
-		};
-		899D5DF213FC073100C66711 /* linux */ = {
-			isa = PBXGroup;
-			children = (
-				899D5DF313FC073100C66711 /* libtess2.a */,
-			);
-			path = linux;
-			sourceTree = "<group>";
-		};
-		899D5DF413FC073100C66711 /* linux64 */ = {
-			isa = PBXGroup;
-			children = (
-				899D5DF513FC073100C66711 /* libtess2.a */,
-			);
-			path = linux64;
 			sourceTree = "<group>";
 		};
 		899D5DF613FC073100C66711 /* osx */ = {
@@ -602,47 +445,9 @@
 			path = osx;
 			sourceTree = "<group>";
 		};
-		899D5DF813FC073100C66711 /* vs2010 */ = {
-			isa = PBXGroup;
-			children = (
-				899D5DF913FC073100C66711 /* tess2.lib */,
-			);
-			path = vs2010;
-			sourceTree = "<group>";
-		};
-		899D5DFA13FC073100C66711 /* win_cb */ = {
-			isa = PBXGroup;
-			children = (
-				899D5DFB13FC073100C66711 /* libtess2.a */,
-			);
-			path = win_cb;
-			sourceTree = "<group>";
-		};
-		899D5DFC13FC073100C66711 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				899D5DFD13FC073100C66711 /* bucketalloc.c */,
-				899D5DFE13FC073100C66711 /* bucketalloc.h */,
-				899D5DFF13FC073100C66711 /* dict.c */,
-				899D5E0013FC073100C66711 /* dict.h */,
-				899D5E0113FC073100C66711 /* geom.c */,
-				899D5E0213FC073100C66711 /* geom.h */,
-				899D5E0313FC073100C66711 /* mesh.c */,
-				899D5E0413FC073100C66711 /* mesh.h */,
-				899D5E0513FC073100C66711 /* priorityq.c */,
-				899D5E0613FC073100C66711 /* priorityq.h */,
-				899D5E0713FC073100C66711 /* sweep.c */,
-				899D5E0813FC073100C66711 /* sweep.h */,
-				899D5E0913FC073100C66711 /* tess.c */,
-				899D5E0A13FC073100C66711 /* tess.h */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
 		E44665C70F5B3E03005D0BF0 /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				899D5CB613FC055000C66711 /* ofxFileDialogOSX */,
 				E44665C90F5B3E03005D0BF0 /* ofx3DModelLoader */,
 				E44665DF0F5B3E03005D0BF0 /* ofxDirList */,
 				E44666040F5B3E03005D0BF0 /* ofxNetwork */,
@@ -1116,7 +921,7 @@
 		E4C2421710CC549C004149E2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4C2421E10CC549C004149E2 /* openFrameworks.a */,
+				E4C2421E10CC549C004149E2 /* openFrameworksDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1159,7 +964,6 @@
 		E4C2427910CC5B66004149E2 /* osx */ = {
 			isa = PBXGroup;
 			children = (
-				E4C2427A10CC5B66004149E2 /* CppUnit.a */,
 				E4C2427B10CC5B66004149E2 /* PocoFoundation.a */,
 				E4C2427C10CC5B66004149E2 /* PocoNet.a */,
 				E4C2427D10CC5B66004149E2 /* PocoUtil.a */,
@@ -1242,10 +1046,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		E4C2421E10CC549C004149E2 /* openFrameworks.a */ = {
+		E4C2421E10CC549C004149E2 /* openFrameworksDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = openFrameworks.a;
+			path = openFrameworksDebug.a;
 			remoteRef = E4C2421D10CC549C004149E2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1291,14 +1095,6 @@
 				E446677F0F5B3E04005D0BF0 /* tinyxmlerror.cpp in Sources */,
 				E44667800F5B3E04005D0BF0 /* tinyxmlparser.cpp in Sources */,
 				E44667810F5B3E04005D0BF0 /* ofxXmlSettings.cpp in Sources */,
-				899D5CB913FC055000C66711 /* ofxFileDialogOSX.cpp in Sources */,
-				899D5E1513FC073100C66711 /* bucketalloc.c in Sources */,
-				899D5E1613FC073100C66711 /* dict.c in Sources */,
-				899D5E1713FC073100C66711 /* geom.c in Sources */,
-				899D5E1813FC073100C66711 /* mesh.c in Sources */,
-				899D5E1913FC073100C66711 /* priorityq.c in Sources */,
-				899D5E1A13FC073100C66711 /* sweep.c in Sources */,
-				899D5E1B13FC073100C66711 /* tess.c in Sources */,
 				89782486140551A700C529B2 /* pkmEXTAudioFileReader.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
