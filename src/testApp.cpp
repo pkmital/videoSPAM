@@ -58,12 +58,12 @@ void testApp::setup()
 
 bool testApp::readVocabulary( const string& filename, Mat& vocabulary )
 {
-    cout << "Reading vocabulary...";
+    printf("Reading vocabulary...");
     FileStorage fs( filename, FileStorage::READ );
     if( fs.isOpened() )
     {
         fs["vocabulary"] >> vocabulary;
-        cout << "done" << endl;
+        printf("done.\n");
         return true;
     }
     return false;
@@ -71,11 +71,12 @@ bool testApp::readVocabulary( const string& filename, Mat& vocabulary )
 
 bool testApp::writeVocabulary( const string& filename, const Mat& vocabulary )
 {
-    cout << "Saving vocabulary..." << endl;
+    printf("Saving vocabulary...");
     FileStorage fs( filename, FileStorage::WRITE );
     if( fs.isOpened() )
     {
         fs << "vocabulary" << vocabulary;
+        printf("done.\n");
         return true;
     }
     return false;
