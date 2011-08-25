@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>89CE9D861406C3E500A209EB</string>
+						<string>89CE9E081406E18900A209EB</string>
 						<key>history</key>
 						<array>
-							<string>89CE9D851406C3E500A209EB</string>
+							<string>89CE9DF31406E03B00A209EB</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -235,47 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>418 71 871 807 0 0 1440 878 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>89CE9D871406C3E500A209EB</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>testApp.h</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>89CE9D881406C3E500A209EB</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>testApp.h</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>89CE9D891406C3E500A209EB</string>
-						<key>history</key>
-						<array>
-							<string>89CE9D7D1406C39100A209EB</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {871, 766}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>36 71 871 807 0 0 1440 878 </string>
+				<string>459 71 871 807 0 0 1440 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -311,6 +271,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -363,6 +325,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>5</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -385,7 +348,7 @@
 							<real>241</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>19 146 1081 680 0 0 1440 878 </string>
+						<string>480 198 1081 680 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -413,15 +376,15 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>89CE9D821406C3E500A209EB</string>
+										<string>89CE9E071406E18900A209EB</string>
 										<key>history</key>
 										<array>
 											<string>89CE9BA114067AFB00A209EB</string>
 											<string>89CE9BE514067D6B00A209EB</string>
-											<string>89CE9BE714067D6B00A209EB</string>
 											<string>89CE9BE914067D6B00A209EB</string>
 											<string>89CE9BEB14067D6B00A209EB</string>
-											<string>89CE9C4514069BEE00A209EB</string>
+											<string>89CE9DE51406DFC600A209EB</string>
+											<string>89CE9DEE1406DFDF00A209EB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -437,7 +400,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {818, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>19 146 1081 680 0 0 1440 878 </string>
+								<string>480 198 1081 680 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -516,7 +479,7 @@
 										<key>Frame</key>
 										<string>{{10, 27}, {818, 607}}</string>
 										<key>RubberWindowFrame</key>
-										<string>19 146 1081 680 0 0 1440 878 </string>
+										<string>480 198 1081 680 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -737,15 +700,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>89CE9D8A1406C3E500A209EB</string>
+		<string>89CE9DE81406DFC600A209EB</string>
 		<string>89CE9C8514069E0100A209EB</string>
 		<string>89CE9C8614069E0100A209EB</string>
 		<string>/Users/pkmital/Coding/ofGit2/apps/pkm/videoSPAM/videoSPAM.xcodeproj</string>
-		<string>89CE9D871406C3E500A209EB</string>
 		<string>89CE9D831406C3E500A209EB</string>
 	</array>
 	<key>WindowString</key>
-	<string>19 146 1081 680 0 0 1440 878 </string>
+	<string>480 198 1081 680 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
