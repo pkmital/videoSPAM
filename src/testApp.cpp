@@ -15,6 +15,7 @@ void testApp::setup()
 	dirList.open(video_dir.c_str());
 	
 	numFiles			= dirList.listDir();
+	numFiles = 3;
 	videoFiles			= dirList.getFiles();
 	if(numFiles == 0)
 	{
@@ -33,7 +34,7 @@ void testApp::setup()
 	videoReader->loadMovie(videoFiles[currentFile].getAbsolutePath());
 	totalFrames			= videoReader->getTotalNumFrames();
 	currentFrame		= 0;
-	
+	allVideoFrames		= 0;	
 	imageScalar			= 2;
 	
 	cvColorImg.allocate(videoReader->getWidth(), videoReader->getHeight());
@@ -42,14 +43,12 @@ void testApp::setup()
 	
 	detector			= FeatureDetector::create("DynamicSURF");
 	extractor			= DescriptorExtractor::create("SURF");
-	matcher				= DescriptorMatcher::create("FlannBased");
-	
-	int dictionarySize	= 1000;
-	TermCriteria tc(CV_TERMCRIT_ITER,100,0.001);
-	int retries			= 1;
-	int flags			= KMEANS_PP_CENTERS;
-	trainer				= new BOWKMeansTrainer(dictionarySize,tc,retries,flags);
-	totalKeypoints		= 0;
+
+	maxKeypoints		= 32;
+	keypointDimension	= 64;
+	numFeatures			= maxKeypoints * keypointDimension;
+	numFrames			= totalFrames;
+	dataset.create(numFrames, numFeatures, CV_32FC1);
 	
 	ofSetVerticalSync(false);
 	ofSetWindowShape(1000, 520);
@@ -99,33 +98,30 @@ void testApp::update(){
 		detector->detect(img, keypoints);
 		totalKeypoints += keypoints.size();
 		
-		// get descriptors (numKeypoints x 128)
+		// get descriptors (numKeypoints x 64)
 		extractor->compute(img, keypoints, descriptors);
-		
+
+#ifdef _DEBUG
+		assert(keypointDimension == descriptors.cols);
+#endif
+
 		// do pca data reduction (number of keypoints -> maxKeypoints)
-		int maxKeypoints = 32;
-		PCA pca(descriptors, Mat(), CV_PCA_DATA_AS_COL, maxKeypoints);
-		
-		// each image now is described by maxKeypoints x 64 values (in the case of SURF)
-		Mat compressed(maxKeypoints, descriptors.cols, CV_32FC1);
-		for( int i = 0; i < descriptors.cols; i++ )
-        {
-            Mat vec = descriptors.col(i), coeffs = compressed.col(i), reconstructed;
-            // compress the vector, the result will be stored
-            // in the i-th row of the output matrix
-            pca.project(vec, coeffs);
+		if (descriptors.rows > maxKeypoints) {
+			PCA pca(descriptors, Mat(), CV_PCA_DATA_AS_COL, maxKeypoints);
 			
-			/* if you want to see the difference in reconstruction
-			// and then reconstruct it
-            pca.backProject(coeffs, reconstructed);
-            // and measure the error
-			printf("%d. diff = %g\n", i, norm(vec, reconstructed, NORM_L2));
-			*/
+			// each image now is described by maxKeypoints x 64 values (in the case of SURF)
+			Mat compressed(maxKeypoints, keypointDimension, CV_32FC1);
+			for( int i = 0; i < keypointDimension; i++ )
+			{
+				Mat vec = descriptors.col(i), coeffs = compressed.col(i), reconstructed;
+				// compress the vector, the result will be stored
+				// in the i-th row of the output matrix
+				pca.project(vec, coeffs);
+			}
+			
+			dataset.row(currentFrame) = compressed.reshape(numFeatures);
 		}
 		
-		/*
-		trainer->compute(descriptors);
-		*/
 		
 		/*
 		// add to kdtree
@@ -167,16 +163,22 @@ void testApp::update(){
 			videoReader->closeMovie();
 			videoReader->close();
 			delete videoReader;
+			sprintf(buf, "%d.mat", currentFile);
+			allVideoFrames += (currentFrame);
+			writeVocabulary(ofToDataPath(buf), dataset.rowRange(0,currentFrame));
 			
 			// open the next one
 			currentFile++;
-			videoReader = new ofVideoPlayer();
+			videoReader			= new ofVideoPlayer();
 			videoReader->loadMovie(videoFiles[currentFile].getAbsolutePath());
-			currentFrame = 0;
-			totalFrames = videoReader->getTotalNumFrames();
+			currentFrame		= 0;
+			totalFrames			= videoReader->getTotalNumFrames();
 			cvColorImg.resize(videoReader->getWidth(), videoReader->getHeight());
 			cvGrayImg.resize(videoReader->getWidth(), videoReader->getHeight());
 			cvGrayImgResized.resize(videoReader->getWidth()/imageScalar, videoReader->getHeight()/imageScalar);
+			
+			numFrames			= totalFrames;
+			dataset.create(numFrames, numFeatures, CV_32FC1);
 		}
 		else 
 		{
@@ -184,14 +186,23 @@ void testApp::update(){
 			videoReader->closeMovie();
 			videoReader->close();
 			delete videoReader;
+			sprintf(buf, "%d.mat", currentFile);
+			allVideoFrames += (currentFrame);
+			writeVocabulary(ofToDataPath(buf), dataset.rowRange(0,currentFrame));
 			
-			/*
-			printf("Computing vocbulary from %d keypoints...", totalKeypoints);
-			Mat vocabulary = trainer->cluster();
-			printf("[OK].\n");
+			Mat completeDataset(allVideoFrames, numFeatures, CV_32FC1);
+			int currentRow = 0;
+			for (int i = 0; i < numFiles; i++) {
+				printf("Appending matrix %d/%d...", i+1, numFiles);
+				sprintf(buf, "%d.mat", currentFile);
+				Mat data;
+				readVocabulary(ofToDataPath(buf), data);
+				completeDataset.rowRange(currentRow, currentRow + data.rows) = data;
+				currentRow += data.rows;
+				printf("[OK].\n");
+			}
 			
-			writeVocabulary(ofToDataPath("vocabulary.mat"), vocabulary);
-			*/
+			writeVocabulary(ofToDataPath("complete.mat"), completeDataset);
 			
 			OF_EXIT_APP(0);
 		}
@@ -224,8 +235,10 @@ void testApp::draw() {
 	ofRect(20, 20, videoReader->getWidth(), videoReader->getHeight());
 	
 	// stats
-	char buf[256];
 	float fps = ofGetFrameRate();
+	sprintf(buf, "movie: %d/%d", currentFile+1, numFiles);
+	ofDrawBitmapString(buf, ofPoint(20,455));
+	
 	sprintf(buf, "fps: %02.2f", fps);
 	ofDrawBitmapString(buf, ofPoint(20,470));
 	
