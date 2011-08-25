@@ -85,7 +85,7 @@ bool testApp::writeVocabulary( const string& filename, const Mat& vocabulary )
 //--------------------------------------------------------------
 void testApp::update(){
 	
-	if (currentFrame < totalFrames) 
+	if (currentFrame < 15) //totalFrames) 
 	{
 		videoReader->setFrame(currentFrame);
 		cvColorImg.setFromPixels(videoReader->getPixels(), videoReader->getWidth(), videoReader->getHeight());
@@ -98,9 +98,34 @@ void testApp::update(){
 		// get keypoints
 		detector->detect(img, keypoints);
 		totalKeypoints += keypoints.size();
-
-		// get descriptors
+		
+		// get descriptors (numKeypoints x 128)
 		extractor->compute(img, keypoints, descriptors);
+		
+		// do pca data reduction (number of keypoints -> maxKeypoints)
+		int maxKeypoints = 32;
+		PCA pca(descriptors, Mat(), CV_PCA_DATA_AS_COL, maxKeypoints);
+		
+		// each image now is described by maxKeypoints x 64 values (in the case of SURF)
+		Mat compressed(maxKeypoints, descriptors.cols, CV_32FC1);
+		for( int i = 0; i < descriptors.cols; i++ )
+        {
+            Mat vec = descriptors.col(i), coeffs = compressed.col(i), reconstructed;
+            // compress the vector, the result will be stored
+            // in the i-th row of the output matrix
+            pca.project(vec, coeffs);
+			
+			/* if you want to see the difference in reconstruction
+			// and then reconstruct it
+            pca.backProject(coeffs, reconstructed);
+            // and measure the error
+			printf("%d. diff = %g\n", i, norm(vec, reconstructed, NORM_L2));
+			*/
+		}
+		
+		/*
+		trainer->compute(descriptors);
+		*/
 		
 		/*
 		// add to kdtree
@@ -109,10 +134,11 @@ void testApp::update(){
 		matcher->add(d);
 		*/
 		
+		/*
 		trainer->add(descriptors);
+		*/
 		
 		/*
-		
 		BOWImgDescriptorExtractor bowDE(extractor,matcher);
 		
 		int dictionarySize=1000;
@@ -152,13 +178,20 @@ void testApp::update(){
 			cvGrayImg.resize(videoReader->getWidth(), videoReader->getHeight());
 			cvGrayImgResized.resize(videoReader->getWidth()/imageScalar, videoReader->getHeight()/imageScalar);
 		}
-		else {
+		else 
+		{
 			printf("[OK] Finished parsing %d video files\n", currentFile);
+			videoReader->closeMovie();
+			videoReader->close();
 			delete videoReader;
 			
+			/*
+			printf("Computing vocbulary from %d keypoints...", totalKeypoints);
 			Mat vocabulary = trainer->cluster();
+			printf("[OK].\n");
 			
 			writeVocabulary(ofToDataPath("vocabulary.mat"), vocabulary);
+			*/
 			
 			OF_EXIT_APP(0);
 		}
