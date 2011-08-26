@@ -52,6 +52,7 @@ public:
 	void closeApp();
 	void setup();
 	void update();
+    void finishCurrentMovie();
 	void draw();
     
 	void keyPressed  (int key);
@@ -66,39 +67,39 @@ public:
 	bool writeVocabulary( const string& filename, const Mat& vocabulary );
 	
 	// opencv images
-	ofxCvColorImage					cvColorImg;			// original img
-	ofxCvGrayscaleImage				cvGrayImg,			// convert to grayscale for performance
+	ofxCvColorImage                 cvColorImg;             // original img
+	ofxCvGrayscaleImage             cvGrayImg,              // convert to grayscale for performance
                                     cvGrayImgResized;
-	float							imageScalar;		// resize an image for performance
+	float                           imageScalar;            // resize an image for performance
     
 	// keypoints/descriptors
-	Mat								descriptors;		// describes each keypoint
-	vector<KeyPoint>				keypoints;			// keypoints in an image
-	cv::Ptr<FeatureDetector>		detector;			// keypoint class
-	cv::Ptr<DescriptorExtractor>	extractor;			// descriptor class
-	int								totalKeypoints;		// total keypoints
-	int								maxKeypoints,		// number of keypoints per frame
-                                    keypointDimension;	// dimension of each keypoint
+	Mat                             descriptors;            // describes each keypoint
+	vector<KeyPoint>                keypoints;              // keypoints in an image
+	cv::Ptr<FeatureDetector>		detector;               // keypoint class
+	cv::Ptr<DescriptorExtractor>	extractor;              // descriptor class
+	int								totalKeypoints;         // total keypoints
+	int								maxKeypointsPerFrame,   // number of keypoints per frame
+                                    keypointDimension;      // dimension of each keypoint
 	
 	// video player
 	ofVideoPlayer					*videoReader;	
-	int								currentFrame,		// current frame in the video
-                                    totalFrames;		// total video frames
+	int								currentFrame,           // current frame in the video
+                                    totalFrames;            // total video frames
 	int								allVideoFrames;
 	
 	// directory listing
-	ofxDirList						dirList;			// listing of all the files
+	ofxDirList						dirList;                // listing of all the files
 	int								currentFile, 
     numFiles;
 	vector<ofFile>					videoFiles;			
 	
 	// For kNN - using opencv version of FlANN
-	Mat								dataset;			// feature dataset
-	cv::flann::Index_<float>		*kdTree;			// kd-tree reference representing all the feature-frames
-	cvflann::AutotunedIndexParams	flannParams;		// index parameters are stored here
-	int								numFeatures,		// dimension of each point
-                                    numFrames;			// number of feature point frames
-	
+	Mat								dataset;                // feature dataset
+	cv::flann::Index_<float>		*kdTree;                // kd-tree reference representing all the feature-frames
+	cvflann::AutotunedIndexParams	flannParams;            // index parameters are stored here
+	int								numFeatures,            // dimension of each point
+                                    numFrames;              // number of feature point frames
+        
 	
 	char							buf[256];
 	bool							bSetup;

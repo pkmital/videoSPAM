@@ -37,14 +37,13 @@ void testApp::closeApp()
 //--------------------------------------------------------------
 void testApp::setup()
 {
-	bSetup				= false;
+	bSetup              = false;
     
-	string video_dir	= ofToDataPath("video");
+	string video_dir    = ofToDataPath("video");
 	dirList.open(video_dir.c_str());
 	
-	numFiles			= dirList.listDir();
-	numFiles = 3;
-	videoFiles			= dirList.getFiles();
+	numFiles            = dirList.listDir();
+	videoFiles          = dirList.getFiles();
 	if(numFiles == 0)
 	{
 		printf("[ERROR] No files found in %s\n", video_dir);
@@ -57,29 +56,29 @@ void testApp::setup()
 		}
 	}
 	
-	currentFile			= 0;
-	videoReader			= new ofVideoPlayer();
+	currentFile         = 0;
+	videoReader         = new ofVideoPlayer();
 	videoReader->loadMovie(videoFiles[currentFile].getAbsolutePath());
-	totalFrames			= videoReader->getTotalNumFrames();
-	currentFrame		= 0;
-	allVideoFrames		= 0;	
-	imageScalar			= 2;
+	totalFrames         = videoReader->getTotalNumFrames();
+	currentFrame        = 0;
+	allVideoFrames      = 0;
+	imageScalar         = 2;
 	
 	cvColorImg.allocate(videoReader->getWidth(), videoReader->getHeight());
 	cvGrayImg.allocate(videoReader->getWidth(), videoReader->getHeight());
 	cvGrayImgResized.allocate(videoReader->getWidth()/imageScalar, videoReader->getHeight()/imageScalar);
-	
-	detector			= FeatureDetector::create("DynamicSURF");
-	extractor			= DescriptorExtractor::create("SURF");
-    
-	maxKeypoints		= 32;
-	keypointDimension	= 64;
-	numFeatures			= maxKeypoints * keypointDimension;
-	numFrames			= totalFrames;
+        
+	detector                = FeatureDetector::create("DynamicSURF");
+	extractor               = DescriptorExtractor::create("SURF");
+	maxKeypointsPerFrame    = 16;
+	keypointDimension       = extractor->descriptorSize(); 
+	numFeatures             = maxKeypointsPerFrame * keypointDimension;
+	numFrames               = totalFrames;	
+    totalKeypoints          = 0;
 	dataset.create(numFrames, numFeatures, CV_32FC1);
 	
 	ofSetVerticalSync(false);
-	ofSetWindowShape(1000, 520);
+	ofSetWindowShape(760, 520);
 	ofSetFrameRate(1000);
 }
 
@@ -109,10 +108,21 @@ bool testApp::writeVocabulary( const string& filename, const Mat& vocabulary )
     return false;
 }
 
+void testApp::finishCurrentMovie()
+{
+    // close current file
+    videoReader->closeMovie();
+    videoReader->close();
+    delete videoReader;
+    sprintf(buf, "%d.mat", currentFile);
+    allVideoFrames += (currentFrame);
+    writeVocabulary(ofToDataPath(buf), dataset.rowRange(0,currentFrame));
+}
+
 //--------------------------------------------------------------
 void testApp::update(){
 	
-	if (currentFrame < 15) //totalFrames) 
+	if (currentFrame < totalFrames) 
 	{
 		videoReader->setFrame(currentFrame);
 		cvColorImg.setFromPixels(videoReader->getPixels(), videoReader->getWidth(), videoReader->getHeight());
@@ -133,12 +143,12 @@ void testApp::update(){
 		assert(keypointDimension == descriptors.cols);
 #endif
         
-        // do pca data reduction (number of keypoints -> maxKeypoints)
-		if (descriptors.rows > maxKeypoints) {
-			PCA pca(descriptors, Mat(), CV_PCA_DATA_AS_COL, maxKeypoints);
+        // do pca data reduction (number of keypoints -> maxKeypointsPerFrame)
+		if (descriptors.rows > maxKeypointsPerFrame) {
+			PCA pca(descriptors, Mat(), CV_PCA_DATA_AS_COL, maxKeypointsPerFrame);
 			
-            // each image now is described by maxKeypoints x 64 values (in the case of SURF)
-			Mat compressed(maxKeypoints, keypointDimension, CV_32FC1);
+            // each image now is described by maxKeypointsPerFrame x 64 values (in the case of SURF)
+			Mat compressed(maxKeypointsPerFrame, keypointDimension, CV_32FC1);
 			for( int i = 0; i < keypointDimension; i++ )
 			{
 				Mat vec = descriptors.col(i), coeffs = compressed.col(i), reconstructed;
@@ -187,14 +197,8 @@ void testApp::update(){
 	}
 	else {
 		if (currentFile+1 < numFiles) {
-            // close current file
-			videoReader->closeMovie();
-			videoReader->close();
-			delete videoReader;
-			sprintf(buf, "%d.mat", currentFile);
-			allVideoFrames += (currentFrame);
-			writeVocabulary(ofToDataPath(buf), dataset.rowRange(0,currentFrame));
-			
+			finishCurrentMovie();
+            
             // open the next one
 			currentFile++;
 			videoReader			= new ofVideoPlayer();
@@ -211,13 +215,9 @@ void testApp::update(){
 		else 
 		{
 			printf("[OK] Finished parsing %d video files\n", currentFile);
-			videoReader->closeMovie();
-			videoReader->close();
-			delete videoReader;
-			sprintf(buf, "%d.mat", currentFile);
-			allVideoFrames += (currentFrame);
-			writeVocabulary(ofToDataPath(buf), dataset.rowRange(0,currentFrame));
+			finishCurrentMovie();
 			
+            printf("Dataset size: %f Gigabytes\n", numFeatures*numFrames*sizeof(float)/1024.0f/1024.0f/1024.0f);
 			Mat completeDataset(allVideoFrames, numFeatures, CV_32FC1);
 			int currentRow = 0;
 			for (int i = 0; i < numFiles; i++) {
@@ -265,17 +265,22 @@ void testApp::draw() {
     // stats
 	float fps = ofGetFrameRate();
 	sprintf(buf, "movie: %d/%d", currentFile+1, numFiles);
-	ofDrawBitmapString(buf, ofPoint(20,455));
+	ofDrawBitmapString(buf, ofPoint(20,440));
 	
 	sprintf(buf, "fps: %02.2f", fps);
-	ofDrawBitmapString(buf, ofPoint(20,470));
+	ofDrawBitmapString(buf, ofPoint(20,455));
 	
 	sprintf(buf, "frame: %d/%d", currentFrame, totalFrames);
-	ofDrawBitmapString(buf, ofPoint(20,485));
+	ofDrawBitmapString(buf, ofPoint(20,470));
 	
 	sprintf(buf, "keypoints %d (this frame), %f (average), %d (total)", 
 			keypoints.size(), totalKeypoints / (float)currentFrame, totalKeypoints );
-	ofDrawBitmapString(buf, ofPoint(20,500));
+	ofDrawBitmapString(buf, ofPoint(20,486));
+    
+    sprintf(buf, "estimated dataset size: %f MB",
+            numFeatures*(allVideoFrames+currentFrame)*sizeof(float)/1024.0f/1024.0f);
+    ofDrawBitmapString(buf, ofPoint(20,500));
+    
 	
 }
 
